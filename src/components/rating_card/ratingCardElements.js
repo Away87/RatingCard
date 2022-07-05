@@ -9,7 +9,7 @@ export const Container = styled.div`
     background-color: hsl(216, 12%, 8%);
     `
 
-export const Card = styled.div`
+export var Card = styled.div`
     width: 85%;
     max-width: 375px;
     height: fit-content;
@@ -60,11 +60,15 @@ export const Paragraph = styled.p`
     line-height: 1.5em;
 `
 export const RatingIcons = styled.ul`
-    list-style-type: none;
     display: flex;
     justify-content: space-evenly;
     margin-bottom: 1em;
 `
+
+export const ListItem = styled.li`
+    list-style-type: none;
+`
+
 export const Icon = styled.button`
     border: none;
     background-color: var(--dark-blue-light) ;
@@ -80,7 +84,12 @@ export const Icon = styled.button`
     font-size: 0.9rem;
 
     &:hover {
-        background-color: vear(--medium-grey);
+        background-color: var(--medium-grey);
+        color: var(--white);
+    }
+
+    &.active {
+        background-color: var(--orange);
         color: var(--white);
     }
 

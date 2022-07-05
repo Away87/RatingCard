@@ -10,20 +10,47 @@ import {
     Heading,
     Paragraph,
     RatingIcons,
+    ListItem,
     Icon,
     Footer,
     Submit
-} from "./ratingCardElements"
+} from "./ratingCardElements";
+
+import ThanksCard from "../thanks_card";
+
 
 const RatingCard = () => {
-    const [SelectButton, setSelectButton] = useState("")
+    const [rated, setRated] = useState(false);
+    const [rateVal, setRateVal] = useState("")
+    
 
+
+    const handleClick = (e) => {
+        const prevActive = document.querySelector(".active")
+        if (prevActive == undefined) {}
+        else {
+            prevActive.classList.remove("active")
+        }
+        e.target.className += " active"
+        setRateVal(e.target.textContent)
+    }
+    
+    const Rate = (e) =>{ 
+        if (rateVal !== "") {setRated(true)}
+        else {
+            alert("Please rate us between 1-5.")
+        }
+    }
 
   return (
     <>
 
     <Container>
         <Card>
+
+            {rated ? (<ThanksCard value={rateVal} />) : 
+            
+            (<>
             <Header>
                 <IconContainer>
                     <HeaderIcon src={StarIcon} />
@@ -37,16 +64,19 @@ const RatingCard = () => {
 
                 </Paragraph>
                 <RatingIcons>
-                    <Icon value={1} onClick={()=> setSelectButton("selected")}  className={SelectButton} >1</Icon>
-                    <Icon value={2} onClick={()=> setSelectButton("selected")}  className={SelectButton} >2</Icon>
-                    <Icon value={3} onClick={()=> setSelectButton("selected")}  className={SelectButton} >3</Icon>
-                    <Icon value={4} onClick={()=> setSelectButton("selected")}  className={SelectButton} >4</Icon>
-                    <Icon value={5} onClick={()=> setSelectButton("selected")} className={SelectButton}  >5</Icon>
+                    <ListItem><Icon onClick={(e)=>handleClick(e)} >1</Icon></ListItem>
+                    <ListItem><Icon onClick={(e)=>handleClick(e)} >2</Icon></ListItem>
+                    <ListItem><Icon onClick={(e)=>handleClick(e)} >3</Icon></ListItem>
+                    <ListItem><Icon onClick={(e)=>handleClick(e)} >4</Icon></ListItem>
+                    <ListItem><Icon onClick={(e)=>handleClick(e)} >5</Icon></ListItem>
                 </RatingIcons>
             </Body>
             <Footer>
-                <Submit>SUBMIT</Submit>
+                <Submit onClick={Rate}>SUBMIT</Submit>
             </Footer>
+            </>)
+            
+            } 
         </Card>
     </Container>
     </>
