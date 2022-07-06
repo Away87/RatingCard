@@ -27,6 +27,7 @@ export const GlobalStyled = createGlobalStyle`
     html {
         min-height: 100vh;
         width: 100%;
+        overflow: hidden;
         font-family: 'Overpass', sans-serif;
     }
 `
