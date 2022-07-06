@@ -29,5 +29,7 @@ export const GlobalStyled = createGlobalStyle`
         width: 100%;
         overflow: hidden;
         font-family: 'Overpass', sans-serif;
+        margin:0;
+        padding:0;
     }
 `
