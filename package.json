@@ -1,6 +1,5 @@
 {
   "name": "ratingapp_frontendmentor",
-  "homepage": "https://Away87.github.io/ratingcard",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
