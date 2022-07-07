@@ -59,36 +59,45 @@ export const Paragraph = styled.p`
     margin-bottom: 2em;
     line-height: 1.5em;
 `
-export const RatingIcons = styled.ul`
+export const RatingIcons = styled.form`
     display: flex;
     justify-content: space-evenly;
     margin-bottom: 1em;
 `
 
-export const ListItem = styled.li`
+export const ListLabel = styled.label`
     list-style-type: none;
 `
 
-export const Icon = styled.button`
+export const CustomRadio = styled.div`
     border: none;
     background-color: var(--dark-blue-light) ;
     width: 2.5em;
     aspect-ratio: 1;
     display: flex;
     justify-content: center;
-    border-radius: 100%;
+    border-radius: 50%;
     align-items: center;
     color: var(--light-grey);
     cursor: pointer;
     font-weight: bold;
     font-size: 0.9rem;
 
+    &::after{
+        content: ${props=>props.value};
+        display: block;
+        /* transform: translateY(5%) */
+    }
+
     &:hover {
         background-color: var(--medium-grey);
         color: var(--white);
     }
+`
 
-    &.active {
+export const Icon = styled.input`
+    display: none;
+    &:checked + div {
         background-color: var(--orange);
         color: var(--white);
     }
