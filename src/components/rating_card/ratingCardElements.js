@@ -1,8 +1,7 @@
 import styled from "styled-components"
 
 export const Container = styled.div`
-    width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,7 +11,6 @@ export const Container = styled.div`
 export var Card = styled.div`
     width: 85%;
     max-width: 375px;
-    height: fit-content;
     background-color: hsl(213, 19%, 18%);
     border-radius: 1em;
     padding: 1.5em;
@@ -44,7 +42,6 @@ export const HeaderIcon = styled.img`
 
 export const Body = styled.div`
     height: 83%;
-    /* border: 2px white solid; */
 `
 
 export const Heading = styled.h2`
@@ -66,7 +63,12 @@ export const RatingIcons = styled.form`
 `
 
 export const ListLabel = styled.label`
-    list-style-type: none;
+    position: relative;
+
+    &:focus-visible {
+    outline: solid 2px orange;
+    outline-offset: 2px;
+    }
 `
 
 export const CustomRadio = styled.div`
@@ -83,23 +85,34 @@ export const CustomRadio = styled.div`
     font-weight: bold;
     font-size: 0.9rem;
 
-    &::after{
-        content: ${props=>props.value};
-        display: block;
-        /* transform: translateY(5%) */
-    }
-
+    
     &:hover {
         background-color: var(--medium-grey);
         color: var(--white);
     }
+    &::before{
+        content: ${props=>props.value};
+        display: block;
+    }
+
 `
 
 export const Icon = styled.input`
-    display: none;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    -webkit-clip-path: inset(50%);
+    clip-path: inset(50%);
+    border: 0;
+    opacity: 0;
     &:checked + div {
         background-color: var(--orange);
         color: var(--white);
+        position: relative;
     }
 
 `
@@ -117,9 +130,15 @@ export const Submit = styled.button`
     letter-spacing: 2px;
     font-weight: bold;
     cursor: pointer;
+    text-transform: uppercase;
 
     &:hover {
         color: var(--orange);
         background-color: var(--white);
+    }
+
+    &:focus-visible {
+    outline: solid 2px orange;
+    outline-offset: 2px;
     }
 `

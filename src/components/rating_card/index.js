@@ -50,7 +50,7 @@ const RatingCard = () => {
             (<>
             <Header>
                 <IconContainer>
-                    <HeaderIcon src={StarIcon} />
+                    <HeaderIcon src={StarIcon} alt="A star"/>
                 </IconContainer>
             </Header>
             <Body>
@@ -84,7 +84,7 @@ const RatingCard = () => {
                 </RatingIcons>
             </Body>
             <Footer>
-                <Submit type='submit' onClick={submitRate}>SUBMIT</Submit>
+                <Submit type='submit' onClick={submitRate}>submit</Submit>
             </Footer>
             </>)
             
