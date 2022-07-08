@@ -125,6 +125,8 @@ export const Icon = styled.input`
 
 `
 
+export const Footer = styled.div`
+`
 export const Submit = styled.button`
     width: 100%;
     height: 3em;
