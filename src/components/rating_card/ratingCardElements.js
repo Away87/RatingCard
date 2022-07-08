@@ -115,11 +115,16 @@ export const Icon = styled.input`
         position: relative;
     }
 
+    &:focus-visible + div {
+        background-color: var(--orange);
+        color: var(--white);
+        position: relative;
+        outline: solid 2px orange;
+        outline-offset: 2px;
+    }
+
 `
 
-export const Footer = styled.div`
-    /* width: 100%; */
-`
 export const Submit = styled.button`
     width: 100%;
     height: 3em;
