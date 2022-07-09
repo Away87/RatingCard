@@ -58,7 +58,7 @@ export const Paragraph = styled.p`
 `
 export const RatingIcons = styled.form`
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     margin-bottom: 1em;
 `
 
@@ -74,7 +74,7 @@ export const ListLabel = styled.label`
 export const CustomRadio = styled.div`
     border: none;
     background-color: var(--dark-blue-light) ;
-    width: 2.5em;
+    width: 3em;
     aspect-ratio: 1;
     display: flex;
     justify-content: center;
@@ -84,6 +84,7 @@ export const CustomRadio = styled.div`
     cursor: pointer;
     font-weight: bold;
     font-size: 0.9rem;
+    padding-top: 3px;
 
     
     &:hover {
@@ -93,6 +94,7 @@ export const CustomRadio = styled.div`
     &::before{
         content: ${props=>props.value};
         display: block;
+        font-size: 1rem;
     }
 
 `
